@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,8 +8,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        mainColor: "#9C46EB",
+        primary: "#111032",
+        background: "#f9f9fd",
+        text: "#111032",
+        foreground: "#FFF",
       },
     },
   },
