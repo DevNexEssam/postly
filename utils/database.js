@@ -12,8 +12,6 @@ export const connectDB = async () => {
     try {
         await mongoose.connect(process.env.MONGODB_URI, {
             dbName: "postly_db",
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
         })
 
         isConnected = true;
