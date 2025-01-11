@@ -1,5 +1,5 @@
 "use client";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Image from "@node_modules/next/image";
 import Link from "@node_modules/next/link";
 import { useState } from "react";
@@ -40,19 +40,28 @@ const NavBar = () => {
               >
                 create prompet
               </Link>
-              <button
-                onClick={() => signIn("google")}
-                className="bg-transparent text-black text-[15px] py-[12px] px-[20px] rounded-full capitalize border border-mainColor"
-              >
-                {session?.user ? "sign out" : "sign in"}
-              </button>
+              {session?.user ? (
+                <button
+                  className="bg-transparent text-black text-[15px] py-[12px] px-[20px] rounded-full capitalize border border-mainColor"
+                  onClick={() => signOut()}
+                >
+                  sign out
+                </button>
+              ) : (
+                <Link
+                  href="/login"
+                  className="bg-transparent text-black text-[15px] py-[12px] px-[20px] rounded-full capitalize border border-mainColor"
+                >
+                  sign in
+                </Link>
+              )}
             </div>
             {/* PROFLIE */}
             {session?.user && (
               <div className="relative">
                 <Image
                   src={session?.user.image}
-                  alt="logo"
+                  alt="profile image"
                   width={36}
                   height={36}
                   onClick={toggleMenuPorfile}
@@ -86,8 +95,8 @@ const NavBar = () => {
             {/* PROFLIE */}
             <div className="relative">
               <Image
-                src={session?.user.image}
-                alt="logo"
+                src={session ? session?.user?.image : "/user.png"}
+                alt="profile image"
                 width={36}
                 height={36}
                 onClick={toggleMenuPorfile}
@@ -121,12 +130,21 @@ const NavBar = () => {
                     >
                       create prompet
                     </Link>
-                    <Link
-                      href="/create-prompt"
-                      className="bg-transparent text-black text-[15px] py-[12px] px-[20px] rounded-full capitalize border border-mainColor"
-                    >
-                      {session?.user ? "sign out" : "sign in"}
-                    </Link>
+                    {session?.user ? (
+                      <button
+                        className="bg-transparent text-black text-[15px] py-[12px] px-[20px] rounded-full capitalize border border-mainColor"
+                        onClick={() => signOut()}
+                      >
+                        sign out
+                      </button>
+                    ) : (
+                      <Link
+                        href="/login"
+                        className="bg-transparent text-black text-[15px] py-[12px] px-[20px] rounded-full capitalize border border-mainColor"
+                      >
+                        sign in
+                      </Link>
+                    )}
                   </div>
                 </div>
               )}
