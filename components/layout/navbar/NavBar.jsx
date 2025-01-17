@@ -12,7 +12,7 @@ const NavBar = () => {
     setOpenPorfile(!openPorfile);
   };
   return (
-    <nav className="py-5 fixed left-0 right-0 top-0">
+    <nav className="py-5">
       <div className="container">
         {/* FLEX */}
         <div className="flex justify-between items-center">
@@ -64,6 +64,7 @@ const NavBar = () => {
                   alt="profile image"
                   width={36}
                   height={36}
+                  quality={100}
                   onClick={toggleMenuPorfile}
                   className="cursor-pointer rounded-full"
                 />
