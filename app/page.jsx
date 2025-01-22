@@ -1,8 +1,8 @@
-import Feed from "@components/sections/feed/Feed";
+import Feed from "@components/elements/feed/Feed";
 
 export default function Home() {
   return (
-    <section className="h-screen flex flex-col justify-center items-center">
+    <section className="mt-[100px] flex flex-col justify-center items-center">
       <div className="container">
         <div className="flex flex-col justify-center gap-10 items-center">
           <div className=" text-center flex flex-col justify-center items-center">

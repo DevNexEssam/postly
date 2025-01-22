@@ -1,5 +1,5 @@
 "use client";
-import FormPrompt from "@components/sections/form-prompt/FormPrompt";
+import FormPrompt from "@components/elements/form-prompt/FormPrompt";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -37,12 +37,12 @@ const CreatePrompt = () => {
 
   return (
     <FormPrompt
-    type='Create'
-    post={post}
-    setPost={setPost}
-    submitting={submitting}
-    handleSubmit={createPrompt}
-  />
-  )
-}
+      type="Create"
+      post={post}
+      setPost={setPost}
+      submitting={submitting}
+      handleSubmit={createPrompt}
+    />
+  );
+};
 export default CreatePrompt;

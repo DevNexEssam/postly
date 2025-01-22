@@ -11,7 +11,7 @@ export default {
         mainColor: "#9C46EB",
         primary: "#111032",
         background: "#f9f9fd",
-        text: "#111032",
+        text: "#9AA6B2",
         foreground: "#FFF",
       },
     },
