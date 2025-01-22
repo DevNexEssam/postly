@@ -1,4 +1,3 @@
-// import { signIn } from "next-auth/react";
 import GoogleProvider from "next-auth/providers/google";
 import { connectDB } from "@utils/database";
 import User from "@models/user";
