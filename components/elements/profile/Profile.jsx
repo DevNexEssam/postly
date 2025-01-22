@@ -20,7 +20,7 @@ const Profile = ({image , name , email , data}) => {
       {/* Posts */}
       <div className="mt-[50px]">
         <h1 className="text-mainColor text-[30px] capitalize font-bold text-center">your posts</h1>
-        <div className="grid grid-cols-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3">
         {data.map((post)=> (
           <PromptCard
           key={post._id}
